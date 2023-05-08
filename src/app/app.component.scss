@@ -1,0 +1,19 @@
+@import "../styles.scss";
+
+.head {
+    display: grid;
+    grid-template: 1fr / 1fr 13fr 6fr;
+    max-height: 5%;
+
+    &__home-button {
+        grid-column: 1;
+        @include button;
+    }
+    &__container {
+        grid-column: 3;
+
+        &a {
+            @include button;
+        }
+    }
+}

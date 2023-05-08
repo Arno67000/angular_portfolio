@@ -1,0 +1,147 @@
+@import "../../../styles.scss";
+
+.home {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(4, 1.5fr) 1fr / 2fr 1.5fr 3fr;
+    grid-auto-rows: minmax(10%, 11%);
+
+    &__firstname {
+        grid-column: 1;
+        grid-row: 1;
+
+        transform: none;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        @include homeTitlesTypo;
+        font-size: 4rem;
+        font-weight: 200;
+        font-family: Cochin, Georgia, Times, Times New Roman, serif;
+    }
+
+    &__lastname {
+        grid-column: 1;
+        grid-row: 2;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include homeTitlesTypo;
+        font-size: 4rem;
+        font-weight: 200;
+        font-family: Cochin, Georgia, Times, Times New Roman, serif;
+    }
+
+    &__upnav {
+        grid-column: 3;
+        grid-row: 2;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        width: 100%;
+
+        &--link1 {
+            @include homeButtons;
+            border-radius: 60px 60px 10px 60px;
+            &:hover {
+                animation: elevateRight 0.3s ease-in-out forwards;
+            }
+        }
+        &--link2 {
+            @include homeButtons;
+            border-radius: 60px 60px 60px 10px;
+            &:hover {
+                animation: elevateLeft 0.3s ease-in-out forwards;
+            }
+        }
+    }
+
+    &__downnav {
+        grid-column: 3;
+        grid-row: 3;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        &--link {
+            @include homeButtons;
+            justify-content: center;
+            padding: 0;
+            width: 6em;
+            height: 3em;
+            border-radius: 60px 60px 60px 60px;
+            font-size: larger;
+            .material-icons {
+                height: 0.5em;
+                font-size: 4em;
+            }
+            &:hover {
+                animation: elevateCenter 0.3s ease-in-out forwards;
+            }
+        }
+    }
+
+    &__job {
+        grid-column: 1 / 3;
+        grid-row: 3;
+
+        margin: auto;
+        opacity: 1;
+
+        @include homeTitlesTypo;
+        font-family: Courier New, Courier, monospace;
+        font-weight: 300;
+    }
+
+    &__technos {
+        grid-column: 1 / 4;
+        grid-row: 4;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        background-color: #ffffff18;
+
+        &--element {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 10%;
+            height: 5rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            .material-icons {
+                display: block;
+                line-height: 4em;
+                height: 0.7em;
+                width: 0.7em;
+                font-size: 4rem;
+                margin-bottom: 0%;
+            }
+            span {
+                font-size: 0.7em;
+                text-align: center;
+                color: $SECONDARY_COLOR;
+                word-wrap: break-word;
+                opacity: 0;
+            }
+
+            &:hover {
+                .material-icons {
+                    animation: rotate3d 2s;
+                }
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

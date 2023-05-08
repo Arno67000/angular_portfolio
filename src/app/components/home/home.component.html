@@ -1,1 +1,29 @@
-<p>home works!</p>
+<div class="home">
+    <div class="home__firstname names">Arnaud</div>
+    <div class="home__lastname names">Stutz</div>
+    <div class="home__upnav rightSlide">
+        <a routerLink="/portfolio" aria-label="Link to portfolio"
+            ><div class="home__upnav--link1"><mat-icon color="primary" class="fas fa-book"></mat-icon>Portfolio</div></a
+        >
+        <a routerLink="/contact" aria-label="Link to contact page"
+            ><div class="home__upnav--link2">
+                <mat-icon color="primary" class="far fa-envelope"></mat-icon>Contact
+            </div></a
+        >
+    </div>
+    <div class="home__downnav rightSlide">
+        <a routerLink="/cv" aria-label="Link to cv"
+            ><div class="home__downnav--link">
+                <mat-icon color="primary" class="fas fa-user-alt"></mat-icon></div
+        ></a>
+    </div>
+    <h1 class="home__job">
+        <span class="letter" *ngFor="let letter of job.split(''); let i = index" id="letter{{ i }}">{{ letter }}</span>
+    </h1>
+    <div class="home__technos rightSlide">
+        <div *ngFor="let techno of technos; let i = index" id="tech{{ i }}" class="home__technos--element">
+            <mat-icon color="accent" ngClass="{{ techno.icon }}"></mat-icon>
+            <span>{{ techno.title }}</span>
+        </div>
+    </div>
+</div>

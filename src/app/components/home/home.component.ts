@@ -1,4 +1,7 @@
-import { Component, HostBinding, HostListener, OnInit } from "@angular/core";
+import { Component, HostBinding, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { Dev } from "../../models/dev";
+import { DevService } from "../../services/dev.service";
 import { listFadeIn } from "../../animations/fades";
 import { slideListFromLeft, slideListFromRight } from "../../animations/slides";
 
@@ -12,28 +15,22 @@ import { slideListFromLeft, slideListFromRight } from "../../animations/slides";
         listFadeIn("letter", "0.8s 1s ease-in", 100),
     ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
     @HostBinding("@listFadeIn")
     @HostBinding("@slideListFromLeft")
     @HostBinding("@slideListFromRight")
-    public job = "Software developer";
-    public technos = [
-        { icon: "fab fa-js-square", title: "Javascript / Typescript" },
-        { icon: "fab fa-node-js", title: "NodeJs" },
-        { icon: "fas fa-database", title: "DB SQL & NoSQL" },
-        { icon: "fab fa-git-square", title: "Git / GitHub" },
-        { icon: "fa-brands fa-rust", title: "Rust" },
-        { icon: "fa-brands fa-docker", title: "Docker" },
-        { icon: "fas fa-terminal", title: "Bash" },
-        { icon: "fab fa-angular", title: "Angular" },
-    ];
-    public hoverEffect: boolean;
+    public dev: Dev | undefined;
+    private subscription: Subscription;
 
-    constructor() {
-        this.hoverEffect = false;
+    constructor(private devService: DevService) {
+        this.subscription = this.devService.devSubject.subscribe((dev) => (this.dev = dev));
+        this.devService.emit();
     }
 
     ngOnInit(): void {
         return;
+    }
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }

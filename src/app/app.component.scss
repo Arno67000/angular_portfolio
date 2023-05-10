@@ -1,17 +1,15 @@
 @import "../styles.scss";
 
 .head {
-    display: grid;
-    grid-template: 1fr / 1fr 13fr 6fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-height: 5%;
 
     &__home-button {
-        grid-column: 1;
         @include button;
     }
     &__container {
-        grid-column: 3;
-
         &a {
             @include button;
         }
@@ -19,9 +17,6 @@
 }
 :host {
     display: block;
-    height: 100%;
-}
-.container {
-    display: block;
     height: 95%;
+    overflow: hidden;
 }

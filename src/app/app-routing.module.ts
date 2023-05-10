@@ -6,7 +6,7 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { CvComponent } from "./components/cv/cv.component";
 
 const routes: Routes = [
-    { path: "portfolio", component: PortfolioComponent },
+    { path: "book", component: PortfolioComponent },
     { path: "contact", component: ContactComponent },
     { path: "cv", component: CvComponent },
     { path: "**", component: HomeComponent },

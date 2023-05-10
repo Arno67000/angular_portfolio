@@ -1,0 +1,45 @@
+@import "../../../styles.scss";
+
+.card {
+    background-color: $SHADOWED_PRIMARY_COLOR;
+    color: $SECONDARY_COLOR;
+    margin: 4%;
+    padding: 2%;
+    .material-icons {
+        color: $TERTIARY_COLOR;
+    }
+
+    &__header {
+        font-size: 1.5rem;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        padding: 0;
+
+        &--job {
+            margin-left: 2%;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-left: 2%;
+        font-weight: 500;
+        font-family: $SECONDARY_FONT;
+        letter-spacing: 0.1em;
+        // font-family: $PRIMARY_FONT;
+
+        &--contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

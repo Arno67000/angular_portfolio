@@ -1,24 +1,8 @@
 <div class="home" *ngIf="dev">
-    <div class="home__firstname names">{{ dev.firstname }}</div>
-    <div class="home__lastname names">{{ dev.lastname }}</div>
-    <div class="home__upnav rightSlide">
-        <a routerLink="/portfolio" aria-label="Link to portfolio"
-            ><div class="home__upnav--link1"><mat-icon color="primary" class="fas fa-book"></mat-icon>Portfolio</div></a
-        >
-        <a routerLink="/contact" aria-label="Link to contact page"
-            ><div class="home__upnav--link2">
-                <mat-icon color="primary" class="far fa-envelope"></mat-icon>Contact
-            </div></a
-        >
-    </div>
-    <div class="home__downnav rightSlide">
-        <a routerLink="/cv" aria-label="Link to cv"
-            ><div class="home__downnav--link">
-                <mat-icon color="primary" class="fas fa-user-alt"></mat-icon></div
-        ></a>
-    </div>
+    <div class="home__firstname">{{ dev.firstname }}</div>
+    <div class="home__lastname">{{ dev.lastname }}</div>
     <h1 class="home__job">
-        <span class="letter" *ngFor="let letter of dev.job.split(''); let i = index" id="letter{{ i }}">{{
+        <span class="home__job--letter" *ngFor="let letter of dev.job.split(''); let i = index" id="letter{{ i }}">{{
             letter
         }}</span>
     </h1>

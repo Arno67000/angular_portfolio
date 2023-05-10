@@ -11,8 +11,8 @@ $theme-blue: (
     500: #0e356e,
     600: #0d3063,
     700: #0b2a56,
-    800: #092246,
-    900: #071a36,
+    800: #001250,
+    900: #000000,
     A100: #6fa6f5,
     A200: #5f92dc,
     A400: #557bb3,
@@ -35,36 +35,10 @@ $theme-blue: (
     ),
 );
 
-$theme-primary: mat-palette($theme-blue);
+$theme-primary: mat-palette($theme-blue, 800);
 $theme-accent: mat-palette($mat-indigo, 100);
 $theme-warn: mat-palette($mat-red);
 
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 @include angular-material-theme($theme);
-
-$custom-typography: mat-typography-config(
-    $font-family: "calistogaregular, sans-serif",
-    $headline: mat-typography-level(32px, 48px, 700),
-    $body-1: mat-typography-level(16px, 24px, 500),
-    $display-4: mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
-    $display-3: mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
-    $display-2: mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
-    $display-1: mat-typography-level(34px, 40px, 400),
-    $title: mat-typography-level(20px, 32px, 500),
-    $subheading-2: mat-typography-level(16px, 28px, 400),
-    $subheading-1: mat-typography-level(15px, 24px, 400),
-    $body-2: mat-typography-level(14px, 24px, 500),
-    $caption: mat-typography-level(12px, 20px, 400),
-    $button: mat-typography-level(0.9rem, 14px, 500),
-    $input: mat-typography-level(inherit, 1.125, 400),
-);
-
-@font-face {
-    font-family: "calistogaregular";
-    src: url("./assets/fonts/calistoga-regular-webfont.woff2") format("woff2"),
-        url("./assets/fonts/calistoga-regular-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-@include angular-material-typography($custom-typography);

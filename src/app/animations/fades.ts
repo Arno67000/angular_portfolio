@@ -10,3 +10,17 @@ export const listFadeIn = (elementClassName: string, timings: string, staggering
             ),
         ]),
     ]);
+
+export const listBorderFadeIn = (elementClassName: string, timings: string, staggering: number) =>
+    trigger("listBorderFadeIn", [
+        transition("void => *", [
+            query(
+                `.${elementClassName}`,
+                [
+                    style({ borderColor: "transparent" }),
+                    stagger(staggering, [animate(timings, style({ borderColor: "*" }))]),
+                ],
+                { optional: true }
+            ),
+        ]),
+    ]);

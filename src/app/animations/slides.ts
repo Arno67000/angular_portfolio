@@ -1,4 +1,4 @@
-import { style, transition, trigger, animate, query, stagger } from "@angular/animations";
+import { style, transition, trigger, animate, query, stagger, keyframes } from "@angular/animations";
 
 export const slideListFromLeft = (elementClassName: string, timings: string, staggering: number) =>
     trigger("slideListFromLeft", [

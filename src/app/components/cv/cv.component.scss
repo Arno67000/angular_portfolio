@@ -1,0 +1,242 @@
+@import "../../../styles.scss";
+
+.cv {
+    display: flex;
+    justify-content: center;
+    height: 92.5%;
+    width: auto;
+    margin-top: 1%;
+    &__left {
+        border-top: 5px inset silver;
+        border-bottom: 5px inset silver;
+        border-left: 10px inset silver;
+        border-right: 5px inset silver;
+
+        width: 18%;
+        background-color: $PRIMARY_COLOR;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: $SECONDARY_COLOR;
+        .material-icons {
+            margin-right: 4%;
+        }
+
+        img {
+            display: block;
+            width: 15rem;
+            height: 15rem;
+            border-radius: 100%;
+            margin: 0 auto;
+        }
+
+        &--contact {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            width: 80%;
+            a {
+                width: 100%;
+                color: $SECONDARY_COLOR;
+                margin-top: 4%;
+                &:hover {
+                    color: $TERTIARY_COLOR;
+                }
+            }
+        }
+
+        &--address {
+            width: 80%;
+        }
+        &--interests {
+            width: 80%;
+            .mat-chip {
+                width: 45%;
+                display: flex;
+                justify-content: space-evenly;
+                &:hover {
+                    background-color: $TERTIARY_COLOR;
+                }
+            }
+        }
+    }
+
+    &__center {
+        width: 67%;
+        display: grid;
+        grid-template: 2fr 13fr / 1fr;
+        font-family: $SECONDARY_FONT;
+        background-color: $SHADOWED_COLOR_DARK;
+        color: $TERTIARY_COLOR;
+        border-top: 5px inset silver;
+        border-bottom: 5px inset silver;
+        padding: 1%;
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .heading {
+            font-size: 1.4rem;
+            margin-bottom: 2%;
+            font-weight: 500;
+            font-style: italic;
+        }
+        &--head {
+            display: grid;
+            grid-template: 1fr / 1fr 2.7fr 1.3fr;
+            .mat-chip {
+                // background-color: $TERTIARY_COLOR;
+                background-color: #00aa55;
+            }
+            &--title {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                border-bottom: 1px solid $TERTIARY_COLOR;
+            }
+            &--resume {
+                padding: 0 4% 1% 2%;
+                border-left: 1px solid $TERTIARY_COLOR;
+                border-bottom: 1px solid $TERTIARY_COLOR;
+            }
+            &--soft {
+                padding: 1% 2% 1% 4%;
+                border-left: 1px solid $TERTIARY_COLOR;
+                border-bottom: 1px solid $TERTIARY_COLOR;
+            }
+        }
+        &--body {
+            display: grid;
+            grid-template: 1fr / 4fr 1fr;
+
+            &--main {
+                .heading {
+                    text-decoration: underline;
+                    font-size: 1rem;
+                    margin-bottom: 2%;
+                }
+                padding: 2% 1% 0.5% 1%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .studies__list {
+                    display: flex;
+                    &--item {
+                        max-width: 60%;
+                        padding-right: 4%;
+                        .title {
+                            font-weight: bold;
+                            font-size: 1rem;
+                            color: $SECONDARY_COLOR;
+                        }
+                        .date {
+                            font-style: italic;
+                            margin-bottom: 1%;
+                            color: $SECONDARY_COLOR;
+                        }
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .xp__list--item {
+                    .title {
+                        font-weight: bold;
+                        margin-right: 4%;
+                        color: $SECONDARY_COLOR;
+                    }
+                    ul {
+                        padding-left: 2%;
+                    }
+                    .light {
+                        color: $SECONDARY_COLOR;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &--references {
+                margin-top: 15%;
+                padding: 8% 4% 2% 2%;
+                border-left: 1px solid $TERTIARY_COLOR;
+                .heading {
+                    margin-left: 8%;
+                }
+                .ref {
+                    width: 100%;
+                    margin: 10%;
+                    border-top: 1px solid $TERTIARY_COLOR;
+                    padding-top: 8%;
+                    a {
+                        display: block;
+                        margin-top: 4%;
+                        &:hover {
+                            color: $SECONDARY_COLOR;
+                        }
+                        .material-icons {
+                            margin-right: 2%;
+                        }
+                    }
+                    &__name {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    &__details {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+    &__right {
+        width: 15%;
+        background-color: $PRIMARY_COLOR;
+
+        border-top: 5px inset silver;
+        border-bottom: 5px inset silver;
+        border-left: 5px inset silver;
+        border-right: 10px inset silver;
+
+        &--skills {
+            width: 80%;
+            height: 100%;
+            margin: auto auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            hr {
+                width: 50%;
+            }
+            .area {
+                width: 100%;
+                h3 {
+                    color: $TERTIARY_COLOR;
+                    font-weight: 500;
+                    font-style: italic;
+                }
+            }
+
+            .base {
+                width: 100%;
+                height: 4px;
+                border-radius: 100%;
+                background-color: $SECONDARY_COLOR;
+
+                &__level {
+                    height: 100%;
+                    background-color: #00aa55;
+                    // background-color: #e2a50e;
+                    border-radius: 25% 25%;
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,22 @@
-<p>portfolio works!</p>
+<div class="container" *ngIf="dev">
+    <mat-card *ngFor="let project of dev.projects; let i = index" class="card {{ i }}">
+        <div class="card__img" [style.background]="'url(' + project.picture + ')'">
+            <mat-icon class="{{ project.icon }}"></mat-icon>
+        </div>
+        <mat-card-header class="card__title">
+            <mat-card-title>{{ project.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card__body">
+            <p>{{ project.description }}</p>
+        </mat-card-content>
+        <mat-card-actions class="card__actions">
+            <a mat-button *ngIf="project.access" target="_blank" href="{{ project.access }}">
+                <mat-icon class="{{ project.access_icon }}"></mat-icon> Jouer
+            </a>
+            <button mat-button *ngIf="project.demo">En voir plus</button>
+            <a mat-button target="_blank" href="{{ project.github }}"
+                ><mat-icon class="fab fa-git-square"></mat-icon> GitHub</a
+            >
+        </mat-card-actions>
+    </mat-card>
+</div>

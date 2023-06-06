@@ -1,1 +1,131 @@
-<p>cv works!</p>
+<div class="cv" *ngIf="dev">
+    <div class="cv__left">
+        <img src="../../assets/img/photo.jpg" alt="ID Picture" />
+        <div class="cv__left--address">
+            <mat-icon class="fas fa-home"></mat-icon> {{ dev.address.zipCode }} {{ dev.address.city.toUpperCase() }}
+            {{ dev.address.country.toUpperCase() }}
+        </div>
+        <div class="cv__left--contact">
+            <a
+                matTooltip="Link"
+                href="https://{{ dev.portfolio }}"
+                aria-label="Link to book web-page"
+                target="_blank"
+                class="cv__left--contact--info"
+                ><mat-icon class="fas fa-globe"></mat-icon> {{ dev.portfolio }}</a
+            >
+            <a href="mailto:{{ dev.mail }}" class="cv__left--contact--info"
+                ><mat-icon class="far fa-envelope"></mat-icon> {{ dev.mail }}</a
+            >
+            <a href="tel:{{ dev.phone.global }}" class="cv__left--contact--info"
+                ><mat-icon class="fas fa-mobile-alt"></mat-icon> {{ dev.phone.fr }}</a
+            >
+            <a
+                matTooltip="Link"
+                href="https://{{ dev.linkedin }}"
+                aria-label="Link to linkedin page"
+                target="_blank"
+                class="cv__left--contact--info"
+                ><mat-icon class="fab fa-linkedin"></mat-icon> {{ dev.linkedin }}</a
+            >
+            <a
+                matTooltip="Link"
+                href="https://{{ dev.github }}"
+                aria-label="Link to github page"
+                target="_blank"
+                class="cv__left--contact--info"
+                ><mat-icon class="fab fa-git-square"></mat-icon> {{ dev.github }}</a
+            >
+        </div>
+        <mat-chip-list class="cv__left--interests">
+            <mat-chip *ngFor="let interest of dev.interests; let i = index" class="interest{{ i }}">
+                <mat-icon matChipAvatar class="{{ interest.icon }}"></mat-icon> {{ interest.title }}
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+
+    <div class="cv__center">
+        <div class="cv__center--head">
+            <div class="cv__center--head--title bordered">
+                <h1 class="terminal">{{ dev.lastname }} {{ dev.firstname }}</h1>
+                <h2 class="terminal">{{ dev.job }}</h2>
+            </div>
+            <div class="cv__center--head--resume bordered">
+                <div class="terminal heading">Principales caractéristiques</div>
+                <p *ngFor="let trait of dev.traits; let i = index" class="terminal trait{{ i }}">{{ trait }}</p>
+            </div>
+            <div class="cv__center--head--soft bordered">
+                <div class="terminal heading">Soft Skills</div>
+                <mat-chip-list>
+                    <mat-chip *ngFor="let soft of dev.softSkills; let i = index" class="terminal soft{{ i }}">
+                        {{ soft }}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+        </div>
+        <div class="cv__center--body">
+            <div class="cv__center--body--main">
+                <div class="xp">
+                    <p class="heading terminal">EXPERIENCES</p>
+                    <div class="xp__list">
+                        <div *ngFor="let item of dev.xp; let i = index" class="xp__list--item xp{{ i }}">
+                            <div>
+                                <span class="terminal title">{{ item.job }}</span>
+                                <span class="terminal title">{{ item.name }}</span>
+                                <span class="terminal title">{{ item.date }}</span>
+                            </div>
+                            <ul>
+                                <li
+                                    *ngFor="let mission of item.description; let i = index"
+                                    class="terminal mission{{ i }}">
+                                    <span
+                                        *ngFor="let el of mission.split('|'); let x = index"
+                                        class="terminal {{ x % 2 === 0 ? x : 'light ' + x }}"
+                                        >{{ el }}</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="studies">
+                    <p class="heading terminal">FORMATIONS</p>
+                    <div class="studies__list">
+                        <div *ngFor="let item of dev.studies; let i = index" class="studies__list--item item{{ i }}">
+                            <p class="terminal title">{{ item.name }}</p>
+                            <p class="terminal date">{{ item.date }}</p>
+                            <p class="terminal desc">{{ item.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cv__center--body--references bordered">
+                <div class="heading terminal">Références</div>
+                <div *ngFor="let ref of dev.references; let i = index" class="ref ref{{ i }} bordered">
+                    <p class="ref__name terminal">{{ ref.name }}</p>
+                    <p class="ref__details terminal">{{ ref.job }} - {{ ref.society }}</p>
+                    <a href="mailto:{{ dev.mail }}" class="ref__contact terminal"
+                        ><mat-icon class="far fa-envelope"></mat-icon> {{ ref.mail }}</a
+                    >
+                    <a href="tel:{{ ref.globalTel }}" class="ref__contact terminal"
+                        ><mat-icon class="fas fa-mobile-alt"></mat-icon> {{ ref.tel }}</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv__right">
+        <div class="cv__right--skills">
+            <div *ngFor="let techno of dev.technos; let i = index" class="area skill{{ i }}">
+                <h3>{{ techno.tag.toUpperCase() }}</h3>
+                <div class="base"><div class="base__level" [style.width.%]="techno.level"></div></div>
+            </div>
+            <hr />
+            <div *ngFor="let lang of dev.langages; let i = index" class="area lang{{ i }}">
+                <h3>{{ lang.title }}</h3>
+                <div class="base"><div class="base__level" [style.width.%]="lang.level"></div></div>
+            </div>
+        </div>
+    </div>
+</div>

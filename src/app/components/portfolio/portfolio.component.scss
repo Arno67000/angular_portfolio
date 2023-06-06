@@ -1,0 +1,66 @@
+@import "../../../styles.scss";
+
+.container {
+    width: 90%;
+    height: 90%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: none;
+    padding: 0 !important;
+    width: 30%;
+    height: auto;
+    max-height: 40%;
+    margin-top: 0.5em;
+    border-radius: 0.5em;
+    background-color: $SHADOWED_SECONDARY_COLOR;
+    &__img {
+        height: 50%;
+        border-radius: 0.5em 0.5em 0 0;
+        background-size: cover !important;
+        background-position: top !important;
+        text-align: end;
+    }
+    &__body {
+        color: $SECONDARY_COLOR;
+        border-radius: 0 0 0.5em 0.5em;
+        text-align: left;
+        padding-left: 1em;
+    }
+    &__title {
+        text-align: center;
+        color: $SECONDARY_COLOR;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 0.5em;
+    }
+    &__actions {
+        display: flex;
+        justify-content: space-evenly;
+        button,
+        a {
+            @include button;
+            color: $SECONDARY_COLOR;
+            .material-icons {
+                color: $SECONDARY_COLOR;
+            }
+            &:hover {
+                color: $PRIMARY_COLOR;
+                background-color: $TERTIARY_COLOR;
+                .material-icons {
+                    color: $PRIMARY_COLOR;
+                }
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $CUSTOM_SHADOWS;
+        .material-icons {
+            color: $TERTIARY_COLOR;
+        }
+    }
+}

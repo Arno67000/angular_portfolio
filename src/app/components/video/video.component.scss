@@ -1,0 +1,31 @@
+@import "../../../styles.scss";
+
+::ng-deep .custom-dialog-container {
+    mat-dialog-container {
+        margin: 0 !important;
+        padding: 1% !important;
+        background-color: transparent;
+        position: relative;
+        overflow: hidden !important;
+    }
+    .video {
+        &__close {
+            @include button;
+            display: block;
+            position: absolute;
+            top: 0.2%;
+            right: 0.2%;
+            background-color: $PRIMARY_COLOR;
+            color: $TERTIARY_COLOR;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50%;
+            border: solid 1px $TERTIARY_COLOR;
+            &:hover {
+                box-shadow: $HOME_SHADOWS;
+                color: $PRIMARY_COLOR;
+                background-color: $TERTIARY_COLOR;
+            }
+        }
+    }
+}

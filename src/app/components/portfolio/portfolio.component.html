@@ -1,19 +1,19 @@
-<div class="container" *ngIf="dev">
+<div class="container" *ngIf="dev && !modalInstance">
     <mat-card *ngFor="let project of dev.projects; let i = index" class="card {{ i }}">
-        <div class="card__img" [style.background]="'url(' + project.picture + ')'">
-            <mat-icon class="{{ project.icon }}"></mat-icon>
-        </div>
-        <mat-card-header class="card__title">
-            <mat-card-title>{{ project.title }}</mat-card-title>
-        </mat-card-header>
+        <div class="card__img" [style.background]="'url(' + project.picture + ')'"></div>
         <mat-card-content class="card__body">
+            <mat-card-title class="card__title"
+                >{{ project.title }} <mat-icon class="{{ project.icon }}"></mat-icon
+            ></mat-card-title>
             <p>{{ project.description }}</p>
         </mat-card-content>
         <mat-card-actions class="card__actions">
             <a mat-button *ngIf="project.access" target="_blank" href="{{ project.access }}">
                 <mat-icon class="{{ project.access_icon }}"></mat-icon> Jouer
             </a>
-            <button mat-button *ngIf="project.demo">En voir plus</button>
+            <button mat-button *ngIf="project.demo" (click)="openVideo(project.demo)">
+                <mat-icon class="fa-solid fa-eye"></mat-icon> Voir plus
+            </button>
             <a mat-button target="_blank" href="{{ project.github }}"
                 ><mat-icon class="fab fa-git-square"></mat-icon> GitHub</a
             >

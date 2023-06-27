@@ -1,9 +1,11 @@
 import { Component, HostBinding, OnDestroy, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
 import { DevService } from "../../services/dev.service";
 import { Subscription } from "rxjs";
 import { Dev } from "../../models/dev";
 import { listFadeIn } from "../../animations/fades";
 import { slideListFromRight } from "../../animations/slides";
+import { VideoComponent } from "../video/video.component";
 
 @Component({
     selector: "app-portfolio",
@@ -19,8 +21,9 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     @HostBinding("@slideListFromRight")
     private subscription: Subscription;
     public dev: Dev | undefined;
+    public modalInstance: boolean = false;
 
-    constructor(private devService: DevService) {
+    constructor(private devService: DevService, private dialog: MatDialog) {
         this.subscription = this.devService.devSubject.subscribe((dev) => (this.dev = dev));
         this.devService.emit();
     }
@@ -31,5 +34,19 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
+    }
+
+    openVideo(video: string) {
+        this.modalInstance = true;
+        const popup = this.dialog.open(VideoComponent, {
+            panelClass: "custom-dialog-container",
+            width: "100%",
+            data: {
+                video,
+            },
+        });
+        popup.afterClosed().subscribe(() => {
+            this.modalInstance = false;
+        });
     }
 }

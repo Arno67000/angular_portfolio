@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.heading {
+    margin-left: 8%;
+    @include cvHeadingBasic;
+}
+.ref {
+    width: 100%;
+    margin: 10%;
+    border-top: 1px solid $TERTIARY_COLOR;
+    padding-top: 8%;
+    a {
+        display: block;
+        margin-top: 4%;
+        &:hover {
+            color: $SECONDARY_COLOR;
+        }
+        .material-icons {
+            margin-right: 2%;
+        }
+    }
+    &__name {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    &__details {
+        font-style: italic;
+    }
+}

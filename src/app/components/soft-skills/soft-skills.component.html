@@ -1,0 +1,6 @@
+<div class="terminal heading">Soft Skills</div>
+<mat-chip-list>
+    <mat-chip *ngFor="let soft of softSkills; let i = index" class="terminal soft{{ i }}">
+        {{ soft }}
+    </mat-chip>
+</mat-chip-list>

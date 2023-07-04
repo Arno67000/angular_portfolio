@@ -1,0 +1,9 @@
+<div *ngFor="let techno of technos; let i = index" class="area skill{{ i }}">
+    <h3>{{ techno.tag.toUpperCase() }}</h3>
+    <div class="base"><div class="base__level" [style.width.%]="techno.level"></div></div>
+</div>
+<hr />
+<div *ngFor="let lang of languages; let i = index" class="area lang{{ i }}">
+    <h3>{{ lang.title }}</h3>
+    <div class="base"><div class="base__level" [style.width.%]="lang.level"></div></div>
+</div>

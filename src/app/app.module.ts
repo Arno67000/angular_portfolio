@@ -10,12 +10,14 @@ import { HomeComponent } from "./components/home/home.component";
 import { CvComponent } from "./components/cv/cv.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { PortfolioComponent } from "./components/portfolio/portfolio.component";
+import { VideoComponent } from "./components/video/video.component";
+
 import { DevService } from "./services/dev.service";
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, CvComponent, ContactComponent, PortfolioComponent],
+    declarations: [AppComponent, HomeComponent, CvComponent, ContactComponent, PortfolioComponent, VideoComponent],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, AngularMaterialModule],
-    providers: [DevService],
+    providers: [DevService, VideoComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

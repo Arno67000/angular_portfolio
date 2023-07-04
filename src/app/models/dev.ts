@@ -17,6 +17,18 @@ export class Dev {
     public traits: string[];
     public xp: { job: string; name: string; description: string[]; date: string }[];
     public studies: { date: string; name: string; description: string }[];
+    public projects: {
+        access?: string;
+        access_icon?: string;
+        demo?: string;
+        title: string;
+        techno: string;
+        description: string;
+        github: string;
+        icon: string;
+        picture: string;
+        picture_description: string;
+    }[];
 
     constructor() {
         // BASICS
@@ -131,5 +143,64 @@ export class Dev {
         this.linkedin = "www.linkedin.com/in/arnaud-stutz";
         this.github = "github.com/Arno67000";
         this.portfolio = "arno67000.github.io";
+        //PROJECTS
+        this.projects = [
+            {
+                title: "Le Pendu",
+                description:
+                    "Création du jeu du pendu (VF), responsive design et animations avec sass, database intégrée (+ de 39K mots de huit lettres)",
+                techno: "Typescript/Js",
+                icon: "fab fa-js-square",
+                picture: "assets/img/pendu.jpg",
+                picture_description: "screenshot of the base game",
+                github: "https://github.com/Arno67000/LePendu05_2021",
+                access: "https://arno67000.github.io/offSite/LePendu/index.html",
+                access_icon: "fas fa-gamepad",
+            },
+            {
+                title: "Viral Clicker",
+                description:
+                    "Jeu de survie, plus le temps passe plus le virus envahit la ville, clickez sur les virus pour les détruire tous. Jeu développé entièrement en Typescript, servi avec Parcel, sauvegarde des scores dans le LocalStorage.",
+                techno: "Typescript/Js",
+                icon: "fab fa-js-square",
+                picture: "assets/img/virus.png",
+                picture_description: "screenshot of the game",
+                github: "https://github.com/Arno67000/virus_game",
+                demo: "assets/videos/virus.mp4",
+            },
+            {
+                title: "Git CLI Rust",
+                description:
+                    "Un petit utilitaire construit en RUST permettant d'explorer les branches locales d'un repo git et d'effectuer des actions basiques. Il permet, pour l'instant, de connaître le nombre de branches présentes, de savoir où se trouve la HEAD, de voir le dernier commit d'une branche et de supprimer la branche.",
+                techno: "Rust",
+                icon: "fa-brands fa-rust",
+                picture: "assets/img/git-handler.png",
+                picture_description: "screenshot of the program source code",
+                github: "https://github.com/Arno67000/Git_CLI_Rust",
+                demo: "assets/videos/git_tool_video.mp4",
+            },
+            {
+                title: "Pool",
+                description:
+                    "Développement d'une petite librairie permettant de paralléliser des actions en utilisant un nombre paramétrable de threads",
+                techno: "Rust",
+                icon: "fa-brands fa-rust",
+                picture: "assets/img/pool.png",
+                picture_description: "screenshot of the program source code",
+                github: "https://github.com/Arno67000/rust_thread_pool",
+                demo: "assets/videos/rust_pool.mp4",
+            },
+            {
+                title: "Testing Nest",
+                description:
+                    "Test de NestJs en développant une API simple, test end-to-end avec Pactum, déploiement des bases de données sous Docker",
+                techno: "Typescript/Js",
+                icon: "fab fa-js-square",
+                picture: "assets/img/nestApi.png",
+                picture_description: "screenshot of the program source code",
+                github: "https://github.com/Arno67000/rust_thread_pool",
+                demo: "assets/videos/nestApi.mp4",
+            },
+        ];
     }
 }

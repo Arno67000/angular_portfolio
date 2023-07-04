@@ -1,0 +1,13 @@
+<mat-dialog-content class="video">
+    <button mat-dialog-close class="video__close">x</button>
+    <video
+        *ngIf="data"
+        style="width: 100%"
+        preload="metadata"
+        controls
+        loop="true"
+        autoplay="true"
+        class="video video__player">
+        <source src="{{ data.video }}" type="video/mp4" />
+    </video>
+</mat-dialog-content>

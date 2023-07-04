@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="home" *ngIf="dev">
+    <div class="home__firstname">{{ dev.firstname }}</div>
+    <div class="home__lastname">{{ dev.lastname }}</div>
+    <h1 class="home__job">
+        <span class="home__job--letter" *ngFor="let letter of dev.job.split(''); let i = index" id="letter{{ i }}">{{
+            letter
+        }}</span>
+    </h1>
+    <div class="home__technos rightSlide">
+        <div *ngFor="let techno of dev.technos; let i = index" id="tech{{ i }}" class="home__technos--element">
+            <mat-icon color="accent" ngClass="{{ techno.icon }}"></mat-icon>
+            <span>{{ techno.title }}</span>
+        </div>
+    </div>
+</div>

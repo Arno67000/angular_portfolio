@@ -1,1 +1,44 @@
-<p>contact works!</p>
+<mat-card class="card" *ngIf="dev">
+    <mat-card-header class="card__header">{{ dev.lastname }} {{ dev.firstname }}</mat-card-header>
+    <p class="card__header--job">{{ dev.job }}</p>
+    <mat-card-content class="card__body">
+        <p class="card__body--text">
+            Pour me contacter, veuillez privilégier mon profil sur LinkedIn :
+            <a
+                color="accent"
+                matTooltip="Link"
+                href="https://{{ dev.linkedin }}"
+                aria-label="Link to linkedin page"
+                target="_blank"
+                ><mat-icon color="accent" class="fab fa-linkedin"></mat-icon> {{ dev.linkedin }}</a
+            >
+        </p>
+        <div class="card__body--contact">
+            <p>
+                {{ dev.address.nb }} {{ dev.address.street }}
+                <span *ngIf="dev.address.locality">, {{ dev.address.locality.toUpperCase() }}</span>
+            </p>
+            <p>{{ dev.address.zipCode }} {{ dev.address.city.toUpperCase() }}</p>
+            <p>{{ dev.address.country.toUpperCase() }}</p>
+        </div>
+        <address class="card__body--contact">
+            <a href="mailto:{{ dev.mail }}"
+                ><mat-icon color="accent" class="far fa-envelope"></mat-icon> {{ dev.mail }}</a
+            >
+            <a href="tel:{{ dev.phone.global }}"
+                ><mat-icon color="accent" class="fas fa-mobile-alt"></mat-icon> {{ dev.phone.fr }}</a
+            >
+        </address>
+        <p class="card__body--text">
+            Pour suivre ou participer à mes projets sur gitHub :
+            <a
+                color="accent"
+                matTooltip="Link"
+                href="https://{{ dev.github }}"
+                aria-label="Link to github page"
+                target="_blank"
+                ><mat-icon color="accent" class="fab fa-git-square"></mat-icon> {{ dev.github }}</a
+            >
+        </p>
+    </mat-card-content>
+</mat-card>

@@ -179,6 +179,28 @@ export class Dev {
                 github: "https://github.com/Arno67000/Git_CLI_Rust",
                 demo: "assets/videos/git_tool_video.mp4",
             },
+            {
+                title: "Pool",
+                description:
+                    "Développement d'une petite librairie permettant de paralléliser des actions en utilisant un nombre paramétrable de threads",
+                techno: "Rust",
+                icon: "fa-brands fa-rust",
+                picture: "assets/img/pool.png",
+                picture_description: "screenshot of the program source code",
+                github: "https://github.com/Arno67000/rust_thread_pool",
+                demo: "assets/videos/rust_pool.mp4",
+            },
+            {
+                title: "Testing Nest",
+                description:
+                    "Test de NestJs en développant une API simple, test end-to-end avec Pactum, déploiement des bases de données sous Docker",
+                techno: "Typescript/Js",
+                icon: "fab fa-js-square",
+                picture: "assets/img/nestApi.png",
+                picture_description: "screenshot of the program source code",
+                github: "https://github.com/Arno67000/rust_thread_pool",
+                demo: "assets/videos/nestApi.mp4",
+            },
         ];
     }
 }

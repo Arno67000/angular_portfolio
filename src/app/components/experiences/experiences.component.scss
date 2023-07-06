@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+.heading {
+    @include cvHeadingUnderline;
+}
+.xp__list--item {
+    .title {
+        font-weight: bold;
+        margin-right: 4%;
+        color: $SECONDARY_COLOR;
+    }
+    ul {
+        padding-left: 2%;
+    }
+    .light {
+        color: $SECONDARY_COLOR;
+        font-weight: bold;
+    }
+}

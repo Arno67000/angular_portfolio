@@ -1,0 +1,19 @@
+<p class="heading terminal">EXPERIENCES</p>
+<div class="xp__list">
+    <div *ngFor="let item of xp; let i = index" class="xp__list--item xp{{ i }}">
+        <div>
+            <span class="terminal title">{{ item.job }}</span>
+            <span class="terminal title">{{ item.name }}</span>
+            <span class="terminal title">{{ item.date }}</span>
+        </div>
+        <ul>
+            <li *ngFor="let mission of item.description; let i = index" class="terminal mission{{ i }}">
+                <span
+                    *ngFor="let el of mission.split('|'); let x = index"
+                    class="terminal {{ x % 2 === 0 ? x : 'light ' + x }}"
+                    >{{ el }}</span
+                >
+            </li>
+        </ul>
+    </div>
+</div>

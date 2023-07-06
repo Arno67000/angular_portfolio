@@ -9,7 +9,7 @@ export class Dev {
     public linkedin: string;
     public github: string;
     public portfolio: string;
-    public langages: { title: string; level: number }[];
+    public languages: { title: string; level: number }[];
     public interests: { icon: string; title: string }[];
     public softSkills: string[];
     public education: { title: string; date: string; description: string }[];
@@ -95,7 +95,7 @@ export class Dev {
             { icon: "fas fa-terminal", title: "Bash", tag: "BASH", level: 65 },
             { icon: "fab fa-angular", title: "Angular", tag: "Angular", level: 75 },
         ];
-        this.langages = [
+        this.languages = [
             { title: "Français", level: 100 },
             { title: "Anglais", level: 83 },
         ];

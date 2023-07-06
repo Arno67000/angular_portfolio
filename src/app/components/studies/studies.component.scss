@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.heading {
+    @include cvHeadingUnderline;
+}
+.studies__list {
+    display: flex;
+    &--item {
+        max-width: 60%;
+        padding-right: 4%;
+        .title {
+            font-weight: bold;
+            font-size: 1rem;
+            color: $SECONDARY_COLOR;
+        }
+        .date {
+            font-style: italic;
+            margin-bottom: 1%;
+            color: $SECONDARY_COLOR;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

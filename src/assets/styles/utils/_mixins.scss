@@ -12,6 +12,18 @@
     text-shadow: $HOME_SHADOWS;
 }
 
+@mixin cvHeadingUnderline {
+    text-decoration: underline;
+    font-size: 1rem;
+    margin-bottom: 2%;
+}
+@mixin cvHeadingBasic {
+    font-size: 1.4rem;
+    margin-bottom: 2%;
+    font-weight: 500;
+    font-style: italic;
+}
+
 /* BREAKPOINTS FOR RESPONSIVE */
 $breakpoints: (
     "tab-min": 760px,

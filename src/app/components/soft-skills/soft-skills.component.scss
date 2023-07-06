@@ -1,0 +1,7 @@
+@import "../../../styles.scss";
+.mat-chip {
+    background-color: $FLASH_COLOR;
+}
+.heading {
+    @include cvHeadingBasic;
+}

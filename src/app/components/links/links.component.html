@@ -1,0 +1,30 @@
+<div class="contact">
+    <a
+        matTooltip="Link"
+        href="https://{{ portfolio }}"
+        aria-label="Link to book web-page"
+        target="_blank"
+        class="contact--info"
+        ><mat-icon class="fas fa-globe"></mat-icon> {{ portfolio }}</a
+    >
+    <a href="mailto:{{ mail }}" class="contact--info"><mat-icon class="far fa-envelope"></mat-icon> {{ mail }}</a>
+    <a href="tel:{{ phone.global }}" class="contact--info"
+        ><mat-icon class="fas fa-mobile-alt"></mat-icon> {{ phone.fr }}</a
+    >
+    <a
+        matTooltip="Link"
+        href="https://{{ linkedin }}"
+        aria-label="Link to linkedin page"
+        target="_blank"
+        class="contact--info"
+        ><mat-icon class="fab fa-linkedin"></mat-icon> {{ linkedin }}</a
+    >
+    <a
+        matTooltip="Link"
+        href="https://{{ github }}"
+        aria-label="Link to github page"
+        target="_blank"
+        class="contact--info"
+        ><mat-icon class="fab fa-git-square"></mat-icon> {{ github }}</a
+    >
+</div>

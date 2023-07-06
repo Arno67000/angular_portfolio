@@ -1,0 +1,11 @@
+<div class="heading terminal">Références</div>
+<div *ngFor="let ref of references; let i = index" class="ref ref{{ i }} bordered">
+    <p class="ref__name terminal">{{ ref.name }}</p>
+    <p class="ref__details terminal">{{ ref.job }} - {{ ref.society }}</p>
+    <a href="mailto:{{ ref.mail }}" class="ref__contact terminal"
+        ><mat-icon class="far fa-envelope"></mat-icon> {{ ref.mail }}</a
+    >
+    <a href="tel:{{ ref.globalTel }}" class="ref__contact terminal"
+        ><mat-icon class="fas fa-mobile-alt"></mat-icon> {{ ref.tel }}</a
+    >
+</div>

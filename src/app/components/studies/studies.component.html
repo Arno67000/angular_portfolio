@@ -1,0 +1,8 @@
+<p class="heading terminal">FORMATIONS</p>
+<div class="studies__list">
+    <div *ngFor="let item of studies; let i = index" class="studies__list--item item{{ i }}">
+        <p class="terminal title">{{ item.name }}</p>
+        <p class="terminal date">{{ item.date }}</p>
+        <p class="terminal desc">{{ item.description }}</p>
+    </div>
+</div>
